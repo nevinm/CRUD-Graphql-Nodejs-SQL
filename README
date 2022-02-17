@@ -1,0 +1,8 @@
+Video: https://www.youtube.com/watch?v=fov5e6XJgwc
+
+Schema:
+Mutations - Edit/Add
+Queries - Fetch
+TypeDefs - Custom types for our app.
+ORM - Written in JS to communicate with Database and create table.
+Entities - ORM based entitites for the tables and data.

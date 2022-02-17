@@ -10,28 +10,25 @@ const main = async () => {
     type: "mysql",
     database: "GraphqlCRUD",
     username: "root",
-    password: "password",
+    password: "starfire",
     logging: true,
-    synchronize: false,
-    entities: [Users],
-  });
+    synchronize: false, // update this to true if you update entities.
+    entities: [Users]
+  })
 
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-  app.use(
-    "/graphql",
-    graphqlHTTP({
-      schema,
-      graphiql: true,
-    })
-  );
+  const app = express()
+  app.use(cors())
+  app.use(express.json())
+  app.use("/graphql", graphqlHTTP({
+    schema,
+    graphiql: true
+  }))
 
   app.listen(3001, () => {
-    console.log("SERVER RUNNING ON PORT 3001");
-  });
-};
+    console.log("APP RUNNING ON 3001")
+  })
+}
 
 main().catch((err) => {
-  console.log(err);
-});
+  console.log("TCL errr -> ", err)
+})
